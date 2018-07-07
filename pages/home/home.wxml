@@ -1,0 +1,49 @@
+<!--pages/home/home.wxml-->
+<!-- banner start-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{scrollUrl}}" wx:key="item.id">
+    <block wx:if="{{item.imgurl}} ">
+      <swiper-item>
+        <image src="{{item.imgurl}}" />
+      </swiper-item>
+    </block>
+    <block wx:else>
+      <image src="null.png " mode="aspectFill "></image>
+    </block>
+  </block>
+</swiper>
+<!-- banner end-->
+
+<view style='height:10px'></view>
+<view class='content'>
+  <button bindtap="totalClassfication" size='mini'>全部分类</button>
+  <button bindtap="myCollect" size='mini'>我的收藏</button>
+</view>
+<view style='height:10px'></view>
+
+<!--今日推荐-->
+<view class="welfare-container">
+  <view class="category-title">
+    <text class="title">今日推荐</text>
+  </view>
+  <scroll-view scroll-y="true">
+    <view class="welfares">
+      <block wx:for-items="{{recommendList}}" wx:key="name">
+        <view class="foodgood" catchtap="catchTapCategory" data-id="{{item.id}}">
+          <block wx:if="{{item.imgurl}} ">
+            <image src="{{item.imgurl}}" class=".food-image" mode="aspectFill" />
+          </block>
+          <block wx:else>
+            <image src="null.png " mode="aspectFill "></image>
+          </block>
+          <view class="product-name">
+            {{item.name}}
+          </view>
+          <view class="product-price-wrap">
+            <p class="product-price-new">￥{{item.price}}</p>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,104 @@
+/* pages/classify/classify.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+/*总体主盒子*/
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #939393;
+}
+
+/*左侧栏主盒子*/
+
+.main_class {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex: 1;
+  width: 25%;
+  height: 300%;
+  background: #fff;
+}
+
+/*左侧栏list的item*/
+
+.main_class .main_class_items {
+  /*每个高60px*/
+  height: 60px;
+  /*垂直居中*/
+  line-height: 60px;
+  /*只设下边线*/
+  border-bottom: 1px solid #e5e5e5;
+  /*文字14px*/
+  font-size: 14pt;
+  text-align: center;
+  background: #fff;
+}
+
+/*左侧栏list的item被选中时*/
+
+.main_class .main_class_items.active {
+  /*背景色变成灰色*/
+  background: #f9f9f9;
+  color: #09bb07;
+  font-size: 17pt;
+}
+
+/*右侧栏主盒子*/
+
+.sub_class {
+  /*右侧盒子使用了绝对定位*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex: 1;
+  /*宽度75%，高度占满，并使用百分比布局*/
+  width: 75%;
+  height: 300%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+/*右侧栏list的item*/
+
+.sub_class .sub_class_items {
+  /*浮动向左*/
+  float: left;
+  /*每个item设置宽度是45%*/
+  width: 40%;
+  height: 60px;
+  margin-top: 5%;
+  margin-left:5%;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+}
+
+.sub_class_items:active {
+  background: #f5f5f5;
+}
+
+.sub_class .sub_class_items image {
+  /*被图片设置宽高*/
+  width: 50px;
+  height: 30px;
+}
+
+.sub_class .sub_class_items text {
+  /*给text设成块级元素*/
+  display: block;
+  line-height: 60px;
+  font-size: 14pt;
+  text-align: center;
+  /*设置文字溢出部分为...*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,63 @@
+<!--pages/list/list.wxml-->
+<!-- 主框架 -->
+<view class="container">
+  <!-- 搜索的分类 -->
+  <view class="classify">
+    搜索类别: {{searchClass}}
+  </view>
+
+  <!--菜品列表-->
+  <view class="dish_list">
+    <view wx:if="{{foodList}}">
+      <block wx:for="{{foodList}}" wx:key="item.id">
+        <!--菜品筛选-->
+        <block wx:if="{{searchClass==item.position||searchClass==item.cuisine||searchClass==item.type}}">
+          <view class="dish_list_items" bindtap="navigateToDetail" data-id="{{item.id}}">
+            <!--菜品图片-->
+            <view class="dish_image ">
+              <block wx:if="{{item.imgurl}} ">
+                <image src="{{item.imgurl}} " mode="aspectFill "></image>
+              </block>
+              <block wx:else>
+                <image src="null.png " mode="aspectFill "></image>
+              </block>
+            </view>
+            <!--菜品信息-->
+            <view class="dish_content ">
+              <view class="dish_content_main ">
+                <view class="dish_content_name ">
+                  {{item.name}}
+                </view>
+                <view class="dish_content_position ">
+                  {{item.position}}{{item.place}}
+                </view>
+                <block class="dish_content_score ">
+                  评分:
+                  <block wx:if="{{item.score >= 4}}">
+                    <block class="good">{{item.score}}</block>
+                  </block>
+                  <block wx:elif="{{item.score >= 3}}">
+                    <block class="comment">{{item.score}}</block>
+                  </block>
+                  <block wx:else>
+                    <block class="bad">{{item.score}}</block>
+                  </block>
+                  /
+                  <block class="full">5</block>
+                </block>
+              </view>
+              <view class="dish_content_price">
+                ¥{{item.price}}
+              </view>
+            </view>
+          </view>
+        </block>
+        <!-- <block wx:else></block> -->
+      </block>
+    </view>
+
+    <view wx:else>暂无数据</view>
+
+  </view>
+
+</view>

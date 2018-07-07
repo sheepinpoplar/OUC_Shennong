@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<text class='text-name'>名称：{{dish.name}}</text>
+<block wx:if="{{item.imgurl}} ">
+  <image class='img' src="{{dish.imgurl}}"></image>
+</block>
+<block wx:else>
+  <image src="null.png " mode="aspectFill "></image>
+</block>
+<text class='text-jieshao'>位置:{{dish.position}}{{dish.place}}</text>
+<text class='text-jieshao'>价格:{{dish.price}}元</text>
+<text class='text-jieshao'>评分:{{dish.score}}</text>
+
+<text class='text'>评论</text>
+
+<view class='flex-test-information'>
+
+
+  <text>味道不错</text>
+</view>
+
+<text>你喜欢吗?</text>
+<button size='mini' type='primary' bindtap='goodwindow'>好评</button>
+<text class = 'text-goodnumber'>{{goodcounter}}</text>
+
+<button size='mini' type='warn' bindtap='badwindow'>差评</button>
+<text class = 'text-badnumber'>{{badcounter}}</text>

@@ -1,0 +1,28 @@
+<!--pages/classify/classify.wxml-->
+<!--主盒子-->
+<view class="container">
+  <!--左侧栏-->
+  <view class="main_class">
+    <!--block是块级作用域，用来绑定遍历对象，起包裹作用-->
+    <block wx:for="{{classList}}" wx:key="item.id">
+      <!--当前项的id等于item项的id，那个就是当前状态-->
+      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+      <view class="main_class_items {{curMainId == item.id ? 'active' : ''}}" bindtap="switchMainClass" data-id="{{item.id}}" data-index="{{index}}">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+  <!--右侧栏-->
+  <view class="sub_class">
+    <!--如果有数据，才遍历项-->
+    <view wx:if="{{classList[curMainIndex].ishaveChild}}">
+      <block wx:for="{{classList[curMainIndex].sub}}" wx:key="item.cid">
+        <view class="sub_class_items" bindtap="switchSubClass" data-cid="{{item.cid}}" data-cname="{{item.cname}}" data-cindex="{{index}}">
+          <text>{{item.cname}}</text>
+        </view>
+      </block>
+    </view>
+    <!--如果无数据，则显示数据-->
+    <view wx:else>暂无数据</view>
+  </view>
+</view>

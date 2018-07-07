@@ -1,0 +1,71 @@
+/**index.wxss**/
+.img{
+  clear: both;
+  display: flex;
+  margin:auto;
+  margin-top: auto
+}
+.text{
+  background-color: yellow;
+  margin: 10rpx;
+}
+.text-goodnumber{
+  background-color: green;
+  margin:6rpx;
+}
+
+.text-badnumber{
+  background-color: red;
+  margin:6rpc;
+}
+
+
+.flex-test-information{
+  width: auto;
+  height: 400rpx;
+  border: 1px solid red;
+  overflow: scroll;
+}
+
+
+
+.flex-test-information view{
+  width: 400rpx;
+  height: 400rpx;
+  font-size: 40rpx;
+  color: white;
+  text-align: center;
+  line-height: 200rpx;
+}
+.a{
+  background-color: green;
+}
+.b{
+  background-color: red;
+}
+.c{
+  background-color: blue;
+}
+
+.slide-image{
+  width: 360px;
+  height: 170px;
+}
+
+.text-jieshao{
+  font-size: 0.4cm;
+  display: flex;
+  flex-direction: row;
+  margin: 3rpx;
+  background-color: palegreen;
+  border:1px solid #ddd;
+  border-radius:10px;
+}
+.text-name{
+  font-size: 0.5cm;
+  background-color:skyblue;
+  border-radius:10px; 
+  display: flex;
+  width: auto;  
+  text-align: center;  
+}
